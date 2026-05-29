@@ -1,5 +1,2 @@
 #!/bin/bash
-while read l
-do read x
-echo "$l"
-done
+paste - - -d"\n" | cut -f1
