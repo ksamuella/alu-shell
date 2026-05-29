@@ -1,2 +1,2 @@
 #!/bin/bash
-awk "NR%2"
+while read line; do read line2; echo "$line"; done
