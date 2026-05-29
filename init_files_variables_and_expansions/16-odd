@@ -1,2 +1,2 @@
 #!/bin/bash
-paste - - | cut -f1
+python3 -c "import sys; [print(l.rstrip()) for i,l in enumerate(sys.stdin) if i%2==0]"
