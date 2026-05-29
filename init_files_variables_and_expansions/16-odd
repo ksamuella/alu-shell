@@ -1,2 +1,2 @@
 #!/bin/bash
-pr -2ats"" | cut -f1
+paste - - | cut -f1
