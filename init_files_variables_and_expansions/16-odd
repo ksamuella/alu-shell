@@ -1,2 +1,5 @@
 #!/bin/bash
-while read line; do read line2; echo "$line"; done
+while read l
+do read x
+echo "$l"
+done
