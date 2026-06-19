@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# This script manages the manage_my_process daemon, supporting
+# start, stop and restart actions via a PID file
+PIDFILE=/var/run/my_process.pid
+
+case "$1" in
+start)
+./manage_my_process &
+echo $! > "$PIDFILE"
+echo "manage_my_process started"
+;;
+stop)
+kill "$(cat "$PIDFILE")"
+rm -f "$PIDFILE"
+echo "manage_my_process stopped"
+;;
+restart)
+kill "$(cat "$PIDFILE")"
+rm -f "$PIDFILE"
+./manage_my_process &
+echo $! > "$PIDFILE"
+echo "manage_my_process restarted"
+;;
+*)
+echo "Usage: manage_my_process {start|stop|restart}"
+;;
+esac
